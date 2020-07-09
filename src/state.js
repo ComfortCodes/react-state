@@ -1,27 +1,34 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
 function StateHook (props){
     const [outputValue, setOutputValue] = 
     useState('Placeholder');
 
-    // eslint-disable-next-line no-undef
-    UpdateText = () =>{
+  function  UpdateText(){
         setOutputValue(
             document.getElementById('inputText').value
         );
 
 }
-return(
-    <React.Fragment>
-    <input id='inputText' type='text'></input>
-    <button type='button' 
-    // eslint-disable-next-line no-undef
-    onClick ={UpdateText}>
-        Update
-    </button>
-    <br/>
-<label>{outputValue}</label>
-</React.Fragment>
+useEffect(
+    () =>{
+    alert('Component Upadated');
+    return () =>{ 
+    alert('Component will be removed');
+};
+    }
 );
+return (
+    <React.Fragment>
+         <input id='inputText' type='text'></input>
+         <button type='button' 
+         onClick ={UpdateText}>
+             Update
+         </button>
+         <br/>
+         <label>{outputValue}
+         </label>
+     </React.Fragment> 
+)
 }
 export default StateHook;

@@ -11,8 +11,8 @@ class ReactState extends React.Component{
         });
     }
     render(){
-        return(
-         <React.Fragment>
+        return (
+        <React.Fragment>
              <input id='inputText' type='text'></input>
              <button type='button' 
              onClick ={this.UpdateText}>
@@ -22,8 +22,9 @@ class ReactState extends React.Component{
              <label id='output'>
                  {this.state.outputText}
              </label>
-         </React.Fragment>   
-        );
+         </React.Fragment> 
+           
+    );
     }
 }
 export default ReactState;
